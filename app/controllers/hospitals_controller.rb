@@ -4,7 +4,7 @@ class HospitalsController < ApplicationController
         if Current.user.admin?
           @hospital=Hospital.new
         else
-            redirect_to root_path, alert: "fghjk"
+            redirect_to root_path, alert: "User Admin  could be must"
         end  
     end
 
@@ -12,12 +12,15 @@ class HospitalsController < ApplicationController
         @hospitals = Hospital.all
     end
 
+    def show
+    end
+
     def create 
         if Current.user.admin?
-            @hospital= Hospital.find(hospital_params)
+            @hospital= Hospital.new(hospital_params)
             @hospital.save         
         end
-        redirect_to root_path
+        redirect_to hospitals_path
     end
 
     def edit 
@@ -25,10 +28,16 @@ class HospitalsController < ApplicationController
     end
 
     def update
-        @hospital = Hospital.find(params[:id])
-        @hospital.update
+       if @hospital.update(hospital_params)
+        redirect_to hospitals_path, notice: "Hospital was succesfully update"
+       end
+    end
 
-        redirect_to root_path
+    def destroy
+        @hospital = Hospital.find(params[:id])
+        @hospital.destroy 
+
+        redirect_to hospitals_path, notice: "Delete succesfully"
     end
 
     private

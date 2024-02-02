@@ -9,7 +9,7 @@ class DoctorsController < ApplicationController
     end
 
     def create
-        @doctor = Doctor.find(doctor_params)
+        @doctor = Doctor.new(doctor_params)
         if @doctor.save 
             redirect_to root_path
         end

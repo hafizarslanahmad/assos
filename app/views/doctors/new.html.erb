@@ -1,0 +1,18 @@
+<h1>Doctor Create</h1>
+
+<div class="row justify-content-center">
+  <%= form_with model: @doctor  do |form|%>
+    <%= form.hidden_field :user_id, value: @doctor.user_id %>    
+    <div class="form-group">
+      <%=form.label :Name%><br>
+      <%= form.text_field :name, placeholder: 'Enter Doctor Name'%>
+    </div><br>
+    <div class="form-group">
+      <%=form.label :Specialization%><br>
+      <%= form.text_field :specialization,  placeholder: 'Enter Specializaton'%>
+    </div><br>
+    <div class="form-group">
+          <%= form.submit "Create doctor", class: 'btn btn-primary'%>
+        </div>
+  <%end%>
+</div>
