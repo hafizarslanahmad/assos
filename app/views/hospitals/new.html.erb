@@ -4,11 +4,11 @@
   <%= form_with model: @hospital  do |form|%>
    <%= form.hidden_field :user_id, value: Current.user.id%>
     <div class="form-group">
-      <%=form.label :Name%>
+      <%=form.label :Name%><br>
       <%= form.text_field :name, placeholder: 'Enter Your Name'%>
     </div><br>
     <div class="form-group">
-      <%=form.label :City_name%>
+      <%=form.label :City_name%><br>
       <%= form.text_field :city,  placeholder: 'Enter City Name'%>
     </div><br>
     <div class="form-group">

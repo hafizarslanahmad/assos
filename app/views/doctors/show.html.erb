@@ -1,0 +1,34 @@
+<h1>Doctor Show</h1>
+
+<strong> Doctor_Name: </strong>
+<%= @doctor.name %>
+<br>
+<strong> Specialization: </strong>
+<%= @doctor.specialization %>
+<br>
+<strong> User: </strong>
+<%= @doctor.user.email %>
+
+
+<h1>Patient Create</h1>
+
+<div class="row justify-content-center">
+  <%= form_with model: @patient  do |form|%>
+    <%= form.hidden_field :doctor_id, value: @patient.doctor_id%>    
+    <div class="form-group">
+      <%=form.label :Name%><br>
+      <%= form.text_field :name, placeholder: 'Enter patient Name'%>
+    </div><br>
+    <div class="form-group">
+      <%=form.label :Diseas%><br>
+      <%= form.text_field :diseas,  placeholder: 'Enter Diseas'%>
+    </div><br>
+    <div class="form-group">
+      <%=form.label :Ward_Name%><br>
+      <%= form.text_field :ward_name,  placeholder: 'Enter Ward Name'%>
+    </div><br>
+    <div class="form-group">
+          <%= form.submit "Create patient", class: 'btn btn-primary'%>
+        </div>
+  <%end%>
+</div>

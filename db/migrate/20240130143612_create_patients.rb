@@ -4,7 +4,7 @@ class CreatePatients < ActiveRecord::Migration[7.1]
       t.string :name
       t.string :diseas
       t.string :ward_name
-      t.belongs_to :user
+      t.belongs_to :doctor
 
       t.timestamps
     end

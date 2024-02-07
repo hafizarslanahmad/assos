@@ -4,7 +4,7 @@
       <th scope="col">#</th>
       <th scope="col">Hospital Name</th>
       <th scope="col">City Name</th>
-      <th scope="col">User Id</th>
+      <th scope="col">User Email</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -14,9 +14,10 @@
         <th scope="row">1</th>
         <td><%= hospital.name%></td>
         <td><%= hospital.city%></td>
-        <td><%= hospital.user_id%></td>
+        <td><%= hospital.user.email%></td>
         <td><%= link_to "edit", edit_hospital_path(hospital.id)%></td>
-        <td><%= link_to "delete", hospitals_path, method: :delete %></td>
+        <td><%= link_to "show", hospital_path(hospital.id)%></td>
+        <td><%= button_to "delete", hospital_path(hospital.id), method: :delete %></td>
       </tr>
     <%end%>
   </tbody>

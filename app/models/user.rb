@@ -1,8 +1,6 @@
 class User < ApplicationRecord
 
-    has_many :hospitals
-    has_many :doctors
-    has_many :patients
+    has_many :hospitals, dependent: :destroy
 
     
     has_secure_password
@@ -16,5 +14,8 @@ class User < ApplicationRecord
         role == "admin"
     end
     
+    def doctort?
+        role == "doctor"
+    end
     
 end

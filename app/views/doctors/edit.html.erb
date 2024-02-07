@@ -1,21 +1,21 @@
-<h1>Hospital Edit</h1>
+<h1>Doctor Edit</h1>
 
 <div class="row justify-content-center">
-  <%= form_with model: @hospital  do |form|%>
+  <%= form_with model: @doctor  do |form|%>
     <div class="form-group">
-      <%=form.label :Name%><br>
+      <%=form.label :Name%>
       <%= form.text_field :name%>
     </div><br>
     <div class="form-group">
-      <%=form.label :City_name%><br>
-      <%= form.text_field :city%>
+      <%=form.label :Specialization%>
+      <%= form.text_field :specialization%>
     </div><br>
     <div class="form-group">
-      <%=form.label :User_Id %><br>
+      <%=form.label :User_id %>
       <%= form.text_field :user_id%>
     </div><br>
     <div class="form-group">
-          <%= form.submit "Edit hospital", class: 'btn btn-primary'%>
+          <%= form.submit "Edit Doctor", class: 'btn btn-primary'%>
         </div>
   <%end%>
 </div>

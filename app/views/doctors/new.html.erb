@@ -2,7 +2,7 @@
 
 <div class="row justify-content-center">
   <%= form_with model: @doctor  do |form|%>
-    <%= form.hidden_field :user_id, value: @doctor.user_id %>    
+    <%= form.hidden_field :user_id, value: Current.user.id %>    
     <div class="form-group">
       <%=form.label :Name%><br>
       <%= form.text_field :name, placeholder: 'Enter Doctor Name'%>

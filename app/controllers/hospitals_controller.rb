@@ -13,6 +13,7 @@ class HospitalsController < ApplicationController
     end
 
     def show
+        @hospital = Hospital.find(params[:id])
     end
 
     def create 
@@ -28,6 +29,7 @@ class HospitalsController < ApplicationController
     end
 
     def update
+        @hospital = Hospital.find(params[:id])
        if @hospital.update(hospital_params)
         redirect_to hospitals_path, notice: "Hospital was succesfully update"
        end
@@ -36,7 +38,6 @@ class HospitalsController < ApplicationController
     def destroy
         @hospital = Hospital.find(params[:id])
         @hospital.destroy 
-
         redirect_to hospitals_path, notice: "Delete succesfully"
     end
 
